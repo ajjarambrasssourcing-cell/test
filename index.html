@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ajjaram Brass Sources</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ANNOUNCEMENT BAR */
+.announcement-bar {
+  width: 100%;
+  height: 36px;
+  background: #3b2617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 16px;
+}
+
+.announcement-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f4d58d;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.announcement-line {
+  width: 65px;
+  height: 0;
+  border-top: 1px dashed rgba(244, 213, 141, 0.45);
+  flex-shrink: 0;
+}
+
+/* HERO VIDEO */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 500px;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+/* TRANSPARENT NAVBAR */
+.top-navbar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 115px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 32px;
+  border: none;
+}
+
+/* LOGO */
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  width: auto;
+  height: 75px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-name {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 4px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.35);
+}
+
+/* NAV RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  min-width: 0;
+  flex: 1;
+}
+
+/* CATEGORY MENU */
+.nav-categories {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  min-width: 0;
+}
+
+.nav-categories a {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  padding: 8px 0;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.35);
+}
+
+/* WHITE UNDERLINE */
+.nav-categories a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-categories a:hover::after,
+.nav-categories a:focus-visible::after {
+  width: 100%;
+}
+
+/* PROFILE */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-profile img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==================================
+   OUR BEST COLLECTION
+================================== */
+
+.best-collection {
+  width: 100%;
+  padding: 45px 32px 55px;
+  background: #ffffff;
+}
+
+/* HEADING */
+.collection-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  color: #30251d;
+  margin-bottom: 22px;
+  line-height: 1.3;
+}
+
+/* DESKTOP - 4 SMALL IMAGES */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* NO BOX / NO BACKGROUND */
+.collection-card {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* ORIGINAL IMAGES ONLY */
+.collection-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  transition: none;
+}
+
+/* NO HOVER ZOOM */
+.collection-card:hover img {
+  transform: none;
+}
+
+/* TABLET */
+@media (min-width: 701px) and (max-width: 1350px) {
+
+  .top-navbar {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .nav-right {
+    gap: 12px;
+  }
+
+  .nav-categories {
+    gap: 12px;
+  }
+
+  .nav-categories a {
+    font-size: clamp(10px, 1.15vw, 15px);
+  }
+
+  .nav-logo img {
+    height: 65px;
+  }
+
+  .logo-name {
+    font-size: 10px;
+  }
+
+  .collection-grid {
+    gap: 18px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+  /* ANNOUNCEMENT */
+  .announcement-bar {
+    height: 32px;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .announcement-text {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .announcement-line {
+    width: 35px;
+  }
+
+  /* VIDEO HEIGHT */
+  .hero-section {
+    height: 45vh;
+    height: 45dvh;
+    min-height: 0;
+  }
+
+  /* NAVBAR */
+  .top-navbar {
+    height: 95px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    height: 60px;
+  }
+
+  .logo-name {
+    font-size: 9px;
+    letter-spacing: 0;
+    margin-top: 3px;
+  }
+
+  /* HIDE CATEGORY LINKS */
+  .nav-categories {
+    display: none;
+  }
+
+  .nav-right {
+    flex: 0 0 auto;
+    gap: 0;
+  }
+
+  .nav-profile img {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* COLLECTION MOBILE */
+  .best-collection {
+    padding: 30px 0 40px;
+  }
+
+  .collection-heading {
+    font-size: 22px;
+    margin: 0 16px 18px;
+  }
+
+  /* HORIZONTAL SCROLL */
+  .collection-grid {
+    display: flex;
+    gap: 14px;
+    max-width: none;
+    margin: 0;
+    padding: 0 16px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .collection-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* SMALL MOBILE IMAGES */
+  .collection-card {
+    flex: 0 0 48%;
+    width: 48%;
+    height: auto;
+    aspect-ratio: auto;
+    scroll-snap-align: start;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .collection-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <span class="announcement-line"></span>
+  <span class="announcement-text">ALL INDIA DELIVERY</span>
+  <span class="announcement-line"></span>
+</div>
+
+<!-- HERO VIDEO + NAVBAR -->
+<section class="hero-section">
+
+  <video
+    class="hero-background"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+    <source src="bg1.mp4" type="video/mp4">
+  </video>
+
+  <header class="top-navbar">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <img src="logo.png" alt="Ajjaram Brass Sources Logo">
+      <span class="logo-name">
+        AJJARAM BRASS SOURCES
+      </span>
+    </div>
+
+    <!-- CATEGORIES + PROFILE -->
+    <div class="nav-right">
+
+      <nav class="nav-categories" aria-label="Product categories">
+        <a href="#brass-idols">Brass Idols</a>
+        <a href="#pooja-brass">Pooja Brass</a>
+        <a href="#gift-brass">Gift Brass</a>
+        <a href="#brass-utensils">Brass Utensils</a>
+        <a href="#brass-home-decor">Brass Home Decor</a>
+        <a href="#brass-lamps">Brass Lamps</a>
+      </nav>
+
+      <!-- PROFILE -->
+      <button
+        type="button"
+        class="nav-profile"
+        id="profileBtn"
+        aria-label="Profile"
+      >
+        <img src="profile.png" alt="Profile">
+      </button>
+
+    </div>
+
+  </header>
+
+</section>
+
+<!-- OUR BEST COLLECTION -->
+<section class="best-collection" id="best-collection">
+
+  <h2 class="collection-heading">
+    Our Best Collection
+  </h2>
+
+  <div class="collection-grid">
+
+    <!-- IMAGE 1 -->
+    <div class="collection-card">
+      <img
+        src="2/1.webp"
+        alt="Brass Collection 1"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="collection-card">
+      <img
+        src="2/2.webp"
+        alt="Brass Collection 2"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="collection-card">
+      <img
+        src="2/3.webp"
+        alt="Brass Collection 3"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- IMAGE 4 -->
+    <div class="collection-card">
+      <img
+        src="2/4.webp"
+        alt="Brass Collection 4"
+        loading="lazy"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
