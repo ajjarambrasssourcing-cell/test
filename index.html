@@ -4,31 +4,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ajjaram Brass Sources</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #ffffff;
+  width: 100%;
+  background: #fff;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-/* ANNOUNCEMENT BAR */
+/* ANNOUNCEMENT */
 .announcement-bar {
   width: 100%;
   height: 36px;
@@ -46,17 +44,15 @@ body {
   letter-spacing: 2px;
   color: #f4d58d;
   white-space: nowrap;
-  text-align: center;
 }
 
 .announcement-line {
   width: 65px;
-  height: 0;
-  border-top: 1px dashed rgba(244, 213, 141, 0.45);
+  border-top: 1px dashed rgba(244,213,141,.45);
   flex-shrink: 0;
 }
 
-/* HERO VIDEO */
+/* HERO */
 .hero-section {
   position: relative;
   width: 100%;
@@ -76,22 +72,18 @@ body {
   z-index: 0;
 }
 
-/* TRANSPARENT NAVBAR */
 .top-navbar {
   position: relative;
   z-index: 2;
   width: 100%;
   height: 115px;
-  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 0 32px;
-  border: none;
 }
 
-/* LOGO */
 .nav-logo {
   display: flex;
   flex-direction: column;
@@ -111,15 +103,14 @@ body {
 .logo-name {
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.3px;
-  color: #ffffff;
+  letter-spacing: .3px;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   margin-top: 4px;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.35);
+  text-shadow: 0 1px 5px rgba(0,0,0,.35);
 }
 
-/* NAV RIGHT */
 .nav-right {
   display: flex;
   align-items: center;
@@ -129,7 +120,6 @@ body {
   flex: 1;
 }
 
-/* CATEGORY MENU */
 .nav-categories {
   display: flex;
   align-items: center;
@@ -140,18 +130,15 @@ body {
 
 .nav-categories a {
   position: relative;
-  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   white-space: nowrap;
-  background: transparent;
   padding: 8px 0;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.35);
+  text-shadow: 0 1px 5px rgba(0,0,0,.35);
 }
 
-/* WHITE UNDERLINE */
 .nav-categories a::after {
   content: "";
   position: absolute;
@@ -159,9 +146,9 @@ body {
   bottom: 2px;
   width: 0;
   height: 2px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 2px;
-  transition: width 0.25s ease;
+  transition: width .25s ease;
 }
 
 .nav-categories a:hover::after,
@@ -169,7 +156,6 @@ body {
   width: 100%;
 }
 
-/* PROFILE */
 .nav-profile {
   display: flex;
   align-items: center;
@@ -188,69 +174,188 @@ body {
   display: block;
 }
 
-/* ==================================
-   OUR BEST COLLECTION
-================================== */
-
-.best-collection {
-  width: 100%;
-  padding: 45px 32px 55px;
-  background: #ffffff;
+/* HERO CONTENT */
+.hero-content {
+  position: absolute;
+  z-index: 2;
+  left: 55px;
+  right: 30px;
+  bottom: 65px;
+  color: #fff;
 }
 
-/* HEADING */
-.collection-heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: 27px;
+/* LANGUAGE TRANSITION */
+.hero-title-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 85px;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(30px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
+  transition: opacity 1.2s ease, filter 1.2s ease;
+}
+
+.hero-title.english {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.hero-title.telugu {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: clamp(23px, 3vw, 42px);
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.hero-title-wrap.show-telugu .english {
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.hero-title-wrap.show-telugu .telugu {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.get-it-on {
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 12px;
+  white-space: nowrap;
+}
+
+.store-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.store-buttons img {
+  width: 155px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* PRODUCT QUALITY */
+.product-quality {
+  width: 100%;
+  background: #fff;
+  padding: 38px 18px 55px;
+}
+
+.product-quality h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: 25px;
   font-weight: 600;
   color: #30251d;
-  margin-bottom: 22px;
-  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 25px;
 }
 
-/* DESKTOP - 4 SMALL IMAGES */
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 25px;
+/*
+  STACKING SYSTEM
+  All cards remain direct children.
+  JS calculates stacking progress while scrolling.
+*/
+.quality-stack {
   max-width: 1050px;
   margin: 0 auto;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-/* NO BOX / NO BACKGROUND */
-.collection-card {
+.quality-card {
+  --stack-scale: 1;
+  position: sticky;
+  top: 35px;
   width: 100%;
-  min-width: 0;
-  height: auto;
-  aspect-ratio: auto;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: visible;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 30px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+  transform: scale(var(--stack-scale));
+  transform-origin: center top;
+  will-change: transform;
 }
 
-/* ORIGINAL IMAGES ONLY */
-.collection-card img {
+.quality-card:nth-child(1) {
+  background: #f5eee5;
+  z-index: 1;
+}
+
+.quality-card:nth-child(2) {
+  background: #eee6db;
+  z-index: 2;
+}
+
+.quality-card:nth-child(3) {
+  background: #e6d7c3;
+  z-index: 3;
+  margin-bottom: 0;
+}
+
+.quality-image {
+  width: 35%;
+  flex: 0 0 35%;
+}
+
+.quality-image img {
   width: 100%;
-  height: auto;
+  max-height: 255px;
   object-fit: contain;
   display: block;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-  transition: none;
 }
 
-/* NO HOVER ZOOM */
-.collection-card:hover img {
-  transform: none;
+.quality-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.quality-text h3 {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(22px, 2.7vw, 31px);
+  font-weight: 700;
+  color: #8B1E3F;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.quality-text p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #111111;
+  line-height: 1.7;
+}
+
+.quality-text .telugu-desc {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  font-size: 12px;
+  line-height: 1.85;
+  margin-top: 10px;
+  color: #111111;
 }
 
 /* TABLET */
 @media (min-width: 701px) and (max-width: 1350px) {
-
   .top-navbar {
     padding: 0 20px;
     gap: 12px;
@@ -275,16 +380,10 @@ body {
   .logo-name {
     font-size: 10px;
   }
-
-  .collection-grid {
-    gap: 18px;
-  }
 }
 
 /* MOBILE */
 @media (max-width: 700px) {
-
-  /* ANNOUNCEMENT */
   .announcement-bar {
     height: 32px;
     gap: 10px;
@@ -300,18 +399,15 @@ body {
     width: 35px;
   }
 
-  /* VIDEO HEIGHT */
   .hero-section {
     height: 45vh;
     height: 45dvh;
     min-height: 0;
   }
 
-  /* NAVBAR */
   .top-navbar {
     height: 95px;
     padding: 0 16px;
-    gap: 10px;
   }
 
   .nav-logo img {
@@ -324,7 +420,6 @@ body {
     margin-top: 3px;
   }
 
-  /* HIDE CATEGORY LINKS */
   .nav-categories {
     display: none;
   }
@@ -339,54 +434,216 @@ body {
     height: 36px;
   }
 
-  /* COLLECTION MOBILE */
-  .best-collection {
-    padding: 30px 0 40px;
+  .hero-content {
+    left: 18px;
+    right: 18px;
+    bottom: 20px;
   }
 
-  .collection-heading {
-    font-size: 22px;
-    margin: 0 16px 18px;
-  }
-
-  /* HORIZONTAL SCROLL */
-  .collection-grid {
-    display: flex;
-    gap: 14px;
-    max-width: none;
-    margin: 0;
-    padding: 0 16px 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .collection-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* SMALL MOBILE IMAGES */
-  .collection-card {
-    flex: 0 0 48%;
-    width: 48%;
+  /*
+    FIX:
+    Telugu heading can wrap to 2 lines.
+    The title box now adjusts to actual text height,
+    removing the extra gap before Get it on.
+  */
+  .hero-title-wrap {
+    min-height: 0;
     height: auto;
-    aspect-ratio: auto;
-    scroll-snap-align: start;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
+    margin-bottom: 7px;
+    display: grid;
+    align-items: end;
   }
 
-  .collection-card img {
+  .hero-title {
+    position: relative;
+    left: auto;
+    top: auto;
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    transform: none;
+    grid-area: 1 / 1;
+    align-self: end;
+  }
+
+  .hero-title.english {
+    font-size: clamp(21px, 5.5vw, 30px);
+  }
+
+  .hero-title.telugu {
+    font-size: clamp(17px, 4.2vw, 23px);
+    line-height: 1.45;
+  }
+
+  .get-it-on {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .store-buttons {
+    gap: 10px;
+  }
+
+  .store-buttons img {
+    width: 125px;
+  }
+
+  /* MOBILE PRODUCT QUALITY */
+  .product-quality {
+    padding: 30px 10px 45px;
+  }
+
+  .product-quality h2 {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+
+  /*
+    MOBILE STACK:
+    Reduced card height and compact gap.
+    JS also updates scaling on mobile scroll.
+  */
+  .quality-card {
+    top: 18px;
+    min-height: 260px;
+    padding: 15px 12px;
+    gap: 12px;
+    margin-bottom: 8px;
+    border-radius: 13px;
+  }
+
+  .quality-image {
+    width: 35%;
+    flex: 0 0 35%;
+  }
+
+  .quality-image img {
+    max-height: 200px;
+  }
+
+  .quality-text h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+
+  .quality-text p {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .quality-text .telugu-desc {
+    font-size: 10px;
+    line-height: 1.65;
+    margin-top: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title {
+    transition: none;
+    filter: none !important;
+  }
+
+  .quality-card {
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
+/* ===== IMAGE + COUNTER SECTION ===== */
+
+.brass-stats {
+  width: 100%;
+  background: #ffffff;
+  padding: 45px 20px 65px;
+}
+
+.brass-stats-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.brass-stat {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+/* IMAGE ABOVE NUMBER */
+.brass-stat-image {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.brass-stat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ANIMATED NUMBER */
+.brass-stat-number {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 700;
+  color: #8B1E3F;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* TEXT BELOW NUMBER */
+.brass-stat-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111111;
+  margin-top: 9px;
+  line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .brass-stats {
+    padding: 30px 8px 40px;
+  }
+
+  .brass-stats-container {
+    gap: 5px;
+  }
+
+  .brass-stat {
+    padding: 8px 3px;
+  }
+
+  .brass-stat-image {
+    width: 90px;
+    height: 90px;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .brass-stat-number {
+    font-size: clamp(25px, 7vw, 36px);
+    letter-spacing: -0.5px;
+  }
+
+  .brass-stat-label {
+    font-size: 10px;
+    margin-top: 6px;
+    line-height: 1.4;
   }
 }
 
@@ -395,40 +652,26 @@ body {
 
 <body>
 
-<!-- TOP ANNOUNCEMENT BAR -->
+<!-- ANNOUNCEMENT -->
 <div class="announcement-bar">
   <span class="announcement-line"></span>
   <span class="announcement-text">ALL INDIA DELIVERY</span>
   <span class="announcement-line"></span>
 </div>
 
-<!-- HERO VIDEO + NAVBAR -->
+<!-- HERO -->
 <section class="hero-section">
-
-  <video
-    class="hero-background"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-  >
+  <video class="hero-background" autoplay muted loop playsinline preload="metadata">
     <source src="bg1.mp4" type="video/mp4">
   </video>
 
   <header class="top-navbar">
-
-    <!-- LOGO -->
     <div class="nav-logo">
       <img src="logo.png" alt="Ajjaram Brass Sources Logo">
-      <span class="logo-name">
-        AJJARAM BRASS SOURCES
-      </span>
+      <span class="logo-name">AJJARAM BRASS SOURCES</span>
     </div>
 
-    <!-- CATEGORIES + PROFILE -->
     <div class="nav-right">
-
       <nav class="nav-categories" aria-label="Product categories">
         <a href="#brass-idols">Brass Idols</a>
         <a href="#pooja-brass">Pooja Brass</a>
@@ -438,70 +681,323 @@ body {
         <a href="#brass-lamps">Brass Lamps</a>
       </nav>
 
-      <!-- PROFILE -->
-      <button
-        type="button"
-        class="nav-profile"
-        id="profileBtn"
-        aria-label="Profile"
-      >
+      <button type="button" class="nav-profile" id="profileBtn" aria-label="Profile">
         <img src="profile.png" alt="Profile">
       </button>
-
     </div>
-
   </header>
 
+  <div class="hero-content">
+    <div class="hero-title-wrap" id="heroTitleWrap">
+      <h1 class="hero-title english" lang="en">
+        INDIA'S #1 BRASS COLLECTION
+      </h1>
+      <div class="hero-title telugu" lang="te">
+        భారతదేశంలో నంబర్ 1 ఇత్తడి వస్తువుల కలెక్షన్
+      </div>
+    </div>
+
+    <p class="get-it-on">Get it on</p>
+
+    <div class="store-buttons">
+      <img src="pla.avif" alt="Get it on Google Play">
+      <img src="app.avif" alt="Download on the App Store">
+    </div>
+  </div>
 </section>
 
-<!-- OUR BEST COLLECTION -->
-<section class="best-collection" id="best-collection">
+<!-- PRODUCT QUALITY -->
+<section class="product-quality" id="product-quality">
+  <h2>Our Product Quality</h2>
 
-  <h2 class="collection-heading">
-    Our Best Collection
-  </h2>
+  <div class="quality-stack">
 
-  <div class="collection-grid">
+    <!-- CARD 1 -->
+    <article class="quality-card">
+      <div class="quality-image">
+        <img src="pro/1.png" alt="Detailed brass craftsmanship" loading="lazy">
+      </div>
 
-    <!-- IMAGE 1 -->
-    <div class="collection-card">
-      <img
-        src="2/1.webp"
-        alt="Brass Collection 1"
-        loading="lazy"
-      >
+      <div class="quality-text">
+        <h3>Exceptional Sharpness</h3>
+
+        <p>
+          Every brass idol is crafted with attention to the
+          smallest details. From expressive facial features
+          to intricate ornaments, each design brings out the
+          beauty of traditional craftsmanship.
+        </p>
+
+        <p class="telugu-desc" lang="te">
+          ప్రతి ఇత్తడి విగ్రహాన్ని చిన్న చిన్న వివరాలపై ప్రత్యేక
+          శ్రద్ధతో రూపొందిస్తాము. ముఖ కవళికలు, ఆభరణాల నమూనాలు,
+          సున్నితమైన చెక్కుదనం ప్రతి విగ్రహానికి ప్రత్యేక
+          అందాన్ని అందిస్తాయి.
+        </p>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="quality-card">
+      <div class="quality-image">
+        <img src="pro/2.png" alt="Brass finish and colour" loading="lazy">
+      </div>
+
+      <div class="quality-text">
+        <h3>Beautiful, Lasting Colour</h3>
+
+        <p>
+          Our brass collections feature a rich, elegant
+          golden appearance that complements traditional
+          and modern spaces. With regular cleaning and
+          proper care, their beautiful finish can be
+          maintained for years.
+        </p>
+
+        <p class="telugu-desc" lang="te">
+          మా ఇత్తడి వస్తువులు ఆకర్షణీయమైన బంగారు వర్ణంతో
+          అందంగా కనిపిస్తాయి. సరైన శుభ్రత, జాగ్రత్తలతో
+          వాటి మెరుపును, అందమైన రంగును చాలా కాలం
+          పాటు కాపాడుకోవచ్చు.
+        </p>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="quality-card">
+      <div class="quality-image">
+        <img src="pro/3.png" alt="Polished brass idol" loading="lazy">
+      </div>
+
+      <div class="quality-text">
+        <h3>Brilliant Shine &amp; Finish</h3>
+
+        <p>
+          Our brass idols combine beautifully defined
+          details with carefully polished surfaces.
+          The refined finishing enhances every curve
+          and ornament, creating a radiant appearance
+          that makes each piece stand out.
+        </p>
+
+        <p class="telugu-desc" lang="te">
+          మా ఇత్తడి విగ్రహాలలో స్పష్టమైన ఆకృతులు,
+          అందమైన చెక్కుదనం, మెరిసే పాలిషింగ్ ప్రత్యేక
+          ఆకర్షణగా నిలుస్తాయి. ప్రతి చిన్న భాగం
+          అందంగా కనిపించేలా రూపొందించిన ముగింపు
+          విగ్రహానికి మరింత శోభను అందిస్తుంది.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== BRASS STATS SECTION ===== -->
+<section class="brass-stats" id="brass-stats">
+
+  <div class="brass-stats-container">
+
+    <!-- 1: PRODUCTS ON STOCK -->
+    <div class="brass-stat">
+
+      <div class="brass-stat-image">
+        <img src="1.png" alt="Brass products" loading="lazy">
+      </div>
+
+      <div class="brass-stat-number">
+        <span class="count-number" data-target="1200">0</span>+
+      </div>
+
+      <p class="brass-stat-label">
+        Products On Stock
+      </p>
+
     </div>
 
-    <!-- IMAGE 2 -->
-    <div class="collection-card">
-      <img
-        src="2/2.webp"
-        alt="Brass Collection 2"
-        loading="lazy"
-      >
+    <!-- 2: INDIA'S BRASS COLLECTION -->
+    <div class="brass-stat">
+
+      <div class="brass-stat-image">
+        <img src="2.png" alt="Indian brass collection" loading="lazy">
+      </div>
+
+      <div class="brass-stat-number">
+        #1
+      </div>
+
+      <p class="brass-stat-label">
+        India's Brass Collection
+      </p>
+
     </div>
 
-    <!-- IMAGE 3 -->
-    <div class="collection-card">
-      <img
-        src="2/3.webp"
-        alt="Brass Collection 3"
-        loading="lazy"
-      >
-    </div>
+    <!-- 3: PRODUCTS SOLD -->
+    <div class="brass-stat">
 
-    <!-- IMAGE 4 -->
-    <div class="collection-card">
-      <img
-        src="2/4.webp"
-        alt="Brass Collection 4"
-        loading="lazy"
-      >
+      <div class="brass-stat-image">
+        <img src="3.png" alt="Brass products sold" loading="lazy">
+      </div>
+
+      <div class="brass-stat-number">
+        <span class="count-number" data-target="2000">0</span>+
+      </div>
+
+      <p class="brass-stat-label">
+        Products Sold
+      </p>
+
     </div>
 
   </div>
 
 </section>
+
+<script>
+/* ENGLISH / TELUGU SMOOTH TRANSITION */
+const titleWrap = document.getElementById("heroTitleWrap");
+
+setInterval(() => {
+  titleWrap.classList.toggle("show-telugu");
+}, 4000);
+
+/* STACK ANIMATION - DESKTOP + MOBILE */
+const cards = [...document.querySelectorAll(".quality-card")];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let ticking = false;
+
+function updateStack() {
+  ticking = false;
+
+  if (reduceMotion.matches) {
+    cards.forEach(card => {
+      card.style.setProperty("--stack-scale", "1");
+    });
+    return;
+  }
+
+  const stickyTop = window.innerWidth <= 700 ? 18 : 35;
+
+  cards.forEach((card, index) => {
+    if (index === cards.length - 1) {
+      card.style.setProperty("--stack-scale", "1");
+      return;
+    }
+
+    const nextCard = cards[index + 1];
+    const nextTop = nextCard.getBoundingClientRect().top;
+
+    const range = Math.max(120, card.offsetHeight * 0.65);
+    const progress = Math.min(
+      1,
+      Math.max(0, (stickyTop + range - nextTop) / range)
+    );
+
+    const scale = 1 - progress * 0.035;
+
+    card.style.setProperty("--stack-scale", scale.toFixed(4));
+  });
+}
+
+function requestStackUpdate() {
+  if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(updateStack);
+  }
+}
+
+window.addEventListener("scroll", requestStackUpdate, { passive: true });
+window.addEventListener("resize", requestStackUpdate);
+updateStack();
+
+/* ===== LOOPING NUMBER COUNTER ANIMATION ===== */
+
+const brassStatsSection = document.querySelector(".brass-stats");
+const brassCounters = document.querySelectorAll(".count-number");
+
+let brassCounterRunning = false;
+let brassCounterTimer = null;
+let brassCounterFrames = [];
+
+function animateBrassCounter(counter) {
+  const target = Number(counter.dataset.target);
+  const duration = 1800;
+  const start = performance.now();
+
+  function frame(now) {
+    if (!brassCounterRunning) return;
+
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+
+    const value = Math.floor(target * eased);
+
+    counter.textContent = value.toLocaleString("en-IN");
+
+    if (progress < 1) {
+      const id = requestAnimationFrame(frame);
+      brassCounterFrames.push(id);
+    } else {
+      counter.textContent = target.toLocaleString("en-IN");
+    }
+  }
+
+  const id = requestAnimationFrame(frame);
+  brassCounterFrames.push(id);
+}
+
+function startBrassCounters() {
+  if (brassCounterRunning) return;
+
+  brassCounterRunning = true;
+
+  function runLoop() {
+    if (!brassCounterRunning) return;
+
+    brassCounters.forEach(counter => {
+      counter.textContent = "0";
+      animateBrassCounter(counter);
+    });
+
+    brassCounterTimer = setTimeout(runLoop, 4500);
+  }
+
+  runLoop();
+}
+
+function stopBrassCounters() {
+  brassCounterRunning = false;
+
+  clearTimeout(brassCounterTimer);
+
+  brassCounterFrames.forEach(id => {
+    cancelAnimationFrame(id);
+  });
+
+  brassCounterFrames = [];
+}
+
+const brassStatsObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startBrassCounters();
+      } else {
+        stopBrassCounters();
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+if (brassStatsSection) {
+  brassStatsObserver.observe(brassStatsSection);
+}
+
+</script>
 
 </body>
 </html>
