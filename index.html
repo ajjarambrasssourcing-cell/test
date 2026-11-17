@@ -614,8 +614,9 @@ body {
   line-height: 1.5;
 }
 
-/* MOBILE */
+/* MOBILE STATS - SMALLER TEXT */
 @media (max-width: 700px) {
+
   .brass-stats {
     padding: 30px 8px 40px;
   }
@@ -632,20 +633,27 @@ body {
     width: 90px;
     height: 90px;
     max-width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
+  /* 1200+, #1, 2000+ */
   .brass-stat-number {
-    font-size: clamp(25px, 7vw, 36px);
-    letter-spacing: -0.5px;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
   }
 
+  /* LABELS */
   .brass-stat-label {
-    font-size: 10px;
-    margin-top: 6px;
+    font-size: 9px;
+    font-weight: 500;
+    margin-top: 5px;
     line-height: 1.4;
   }
+
 }
+
 
 </style>
 </head>
