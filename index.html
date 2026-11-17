@@ -661,9 +661,23 @@ body {
 
 <!-- HERO -->
 <section class="hero-section">
-  <video class="hero-background" autoplay muted loop playsinline preload="metadata">
-    <source src="bg1.mp4" type="video/mp4">
-  </video>
+ 
+<!-- HERO BACKGROUND VIDEO -->
+<video
+  id="heroVideo"
+  class="hero-background"
+  autoplay
+  muted
+  loop
+  playsinline
+  webkit-playsinline
+  preload="auto"
+  disablepictureinpicture
+  disableremoteplayback
+>
+  <source src="bg1.mp4" type="video/mp4">
+</video>
+
 
   <header class="top-navbar">
     <div class="nav-logo">
@@ -995,6 +1009,51 @@ const brassStatsObserver = new IntersectionObserver(
 
 if (brassStatsSection) {
   brassStatsObserver.observe(brassStatsSection);
+}
+
+/* HERO VIDEO AUTOPLAY */
+const heroVideo = document.getElementById("heroVideo");
+
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+  heroVideo.loop = true;
+
+  function startHeroVideo() {
+    const playPromise = heroVideo.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Video autoplay blocked:", error.name);
+      });
+    }
+  }
+
+  if (heroVideo.readyState >= 2) {
+    startHeroVideo();
+  } else {
+    heroVideo.addEventListener(
+      "canplay",
+      startHeroVideo,
+      { once: true }
+    );
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && heroVideo.paused) {
+      startHeroVideo();
+    }
+  });
+
+  // Retry after first user interaction if browser blocks autoplay
+  document.addEventListener(
+    "pointerdown",
+    () => {
+      if (heroVideo.paused) startHeroVideo();
+    },
+    { once: true }
+  );
 }
 
 </script>
