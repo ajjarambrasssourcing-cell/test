@@ -1,0 +1,278 @@
+
+/* ===== OUR STORY SECTION ===== */
+
+.our-story {
+  position: relative;
+  width: 100%;
+  background: #f5e7ce;
+  padding: 75px 0 85px;
+  overflow: hidden;
+}
+
+/* ===== TOP WHITE CURVE ===== */
+
+.our-story::before {
+  content: "";
+  position: absolute;
+  top: -65px;
+  left: -10%;
+  width: 120%;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 0 0 50% 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== BOTTOM WHITE CURVE ===== */
+
+.our-story::after {
+  content: "";
+  position: absolute;
+  bottom: -65px;
+  left: -10%;
+  width: 120%;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 50% 50% 0 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== CONTENT ABOVE CURVES ===== */
+
+.our-story > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HEADING ===== */
+
+.our-story h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #30251d;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* ===== HORIZONTAL IMAGE GALLERY ===== */
+
+.story-gallery {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-gallery-track {
+  --story-gap: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: var(--story-gap);
+  width: max-content;
+
+  animation: storyScroll 24s linear infinite;
+  will-change: transform;
+}
+
+/* ===== IMAGE BOXES ===== */
+
+.story-gallery-item {
+  width: calc((100vw - 3 * var(--story-gap)) / 4);
+  height: 270px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5eee5;
+}
+
+.story-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== CONTINUOUS AUTO SLIDE ===== */
+
+@keyframes storyScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(
+      calc(-50% - var(--story-gap) / 2)
+    );
+  }
+}
+
+/* ===== OUR STORY DESCRIPTION ===== */
+
+.story-content {
+  width: 100%;
+  max-width: 950px;
+  margin: 28px auto 0;
+  padding: 0 22px;
+  text-align: center;
+}
+
+.story-paragraph {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2;
+  color: #333333;
+  letter-spacing: 0.1px;
+}
+
+/* MAROON HIGHLIGHT */
+
+.story-highlight {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.12em;
+  font-weight: 700;
+  color: #8B1E3F;
+  letter-spacing: 0.5px;
+}
+
+/* GOLD HIGHLIGHT */
+
+.story-gold {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.18em;
+  font-weight: 700;
+  color: #B8860B;
+  letter-spacing: 0.3px;
+}
+
+/* IMPORTANT CRAFT WORDS */
+
+.story-emphasis {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.06em;
+  font-weight: 600;
+  color: #654321;
+}
+
+/* ===== TABLET ===== */
+
+@media (min-width: 701px) and (max-width: 1024px) {
+
+  .story-gallery-item {
+    height: 220px;
+    border-radius: 10px;
+  }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+  .our-story {
+    padding: 55px 0 65px;
+  }
+
+  /* TOP CURVE MOBILE */
+
+  .our-story::before {
+    top: -35px;
+    left: -10%;
+    width: 120%;
+    height: 65px;
+  }
+
+  /* BOTTOM CURVE MOBILE */
+
+  .our-story::after {
+    bottom: -35px;
+    left: -10%;
+    width: 120%;
+    height: 65px;
+  }
+
+  /* HEADING */
+
+  .our-story h2 {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+
+  /* IMAGE SLIDER */
+
+  .story-gallery-track {
+    --story-gap: 8px;
+    animation-duration: 20s;
+  }
+
+  /* MOBILE SQUARE IMAGE BOXES */
+
+  .story-gallery-item {
+    width: 145px;
+    height: 145px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+  }
+
+  .story-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* STORY DESCRIPTION */
+
+  .story-content {
+    margin-top: 18px;
+    padding: 0 17px;
+  }
+
+  .story-paragraph {
+    font-size: 12px;
+    line-height: 1.9;
+    letter-spacing: 0;
+  }
+
+  .story-highlight {
+    font-size: 1.08em;
+    letter-spacing: 0.2px;
+  }
+
+  .story-gold {
+    font-size: 1.12em;
+  }
+
+  .story-emphasis {
+    font-size: 1.05em;
+  }
+
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 360px) {
+
+  .story-gallery-item {
+    width: 125px;
+    height: 125px;
+  }
+
+  .story-gallery-track {
+    --story-gap: 7px;
+  }
+
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .story-gallery-track {
+    animation: none;
+    will-change: auto;
+  }
+
+}
