@@ -614,7 +614,6 @@ body {
   line-height: 1.5;
 }
 
-
 /* MOBILE STATS - SMALLER TEXT */
 @media (max-width: 700px) {
 
@@ -656,7 +655,60 @@ body {
 }
 
 
+/* OUR STORY */
+.our-story {
+  width: 100%;
+  background: #ffffff;
+  padding: 38px 18px 45px;
+}
+
+.our-story h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #30251d;
+  text-align: center;
+  margin: 0;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .our-story {
+    padding: 30px 10px 35px;
+  }
+
+  .our-story h2 {
+    font-size: 19px;
+  }
+}
+
+/* REDUCE GAP ABOVE OUR STORY */
+.brass-stats {
+  padding-bottom: 10px;
+}
+
+.our-story {
+  padding-top: 10px;
+}
+
+.our-story h2 {
+  margin-top: 0;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .brass-stats {
+    padding-bottom: 5px;
+  }
+
+  .our-story {
+    padding-top: 5px;
+  }
+}
+
 </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -876,6 +928,75 @@ body {
 
 </section>
 
+<!-- OUR STORY SECTION -->
+
+
+<section class="our-story" id="our-story">
+  <h2>Our Story</h2>
+
+  <div class="story-gallery">
+    <div class="story-gallery-track">
+
+      <div class="story-gallery-item">
+        <img src="story/story2.jpeg" alt="Brass craftsmanship">
+      </div>
+
+      <div class="story-gallery-item">
+        <img src="story/story3.JPG" alt="Brass making">
+      </div>
+
+      <div class="story-gallery-item">
+        <img src="story/story4.jpeg" alt="Brass bells">
+      </div>
+
+      <div class="story-gallery-item">
+        <img src="story/story1.avif" alt="Brass idols">
+      </div>
+
+      <!-- DUPLICATE FOR SEAMLESS LOOP -->
+      <div class="story-gallery-item" aria-hidden="true">
+        <img src="story/story3.JPG" alt="">
+      </div>
+
+      <div class="story-gallery-item" aria-hidden="true">
+        <img src="story//story2.jpeg" alt="">
+      </div>
+
+      <div class="story-gallery-item" aria-hidden="true">
+        <img src="story/story4.jpeg" alt="">
+      </div>
+
+      <div class="story-gallery-item" aria-hidden="true">
+        <img src="story/story1.avif" alt="">
+      </div>
+
+    </div>
+  </div>
+
+<!-- OUR STORY DESCRIPTION -->
+<div class="story-content">
+
+  <p class="story-paragraph">
+    <span class="story-highlight">AJJARAM</span>
+    is a
+    <span class="story-gold">200-YEAR-OLD</span>
+    brass-making village in
+    <span class="story-highlight">WEST GODAVARI</span>
+    district,
+    <span class="story-highlight">ANDHRA PRADESH</span>,
+    where nearly
+    <span class="story-gold">85%</span>
+    of the population relies on handcrafting
+    <span class="story-emphasis">traditional brassware,</span>
+    <span class="story-emphasis">precision bells,</span>
+    and
+    <span class="story-emphasis">temple artifacts.</span>
+  </p>
+
+</div>
+
+</section>
+
 <script>
 /* ENGLISH / TELUGU SMOOTH TRANSITION */
 const titleWrap = document.getElementById("heroTitleWrap");
@@ -1066,6 +1187,7 @@ if (heroVideo) {
 }
 
 </script>
+  <script src="app.js"></script>
 
 </body>
 </html>
