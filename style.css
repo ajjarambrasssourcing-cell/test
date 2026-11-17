@@ -352,6 +352,23 @@
   white-space: nowrap;
 }
 
+/* FULL WIDTH IMAGE SECTION */
+.full-image-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.full-image-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
 /* ===== TABLET ===== */
 
 @media (min-width: 701px) and (max-width: 1024px) {
@@ -474,3 +491,246 @@
     font-size: 13px;
   }
 }
+
+/* ===== AJJARAM INFO SECTION ===== */
+
+.ajjaram-info-section {
+  width: 100vw;
+  width: 100dvw;
+  max-width: none;
+
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-left: -50dvw;
+
+  background: #f8f6f2;
+  padding: 45px 20px 35px;
+  box-sizing: border-box;
+  clear: both;
+}
+
+/* MAIN CONTENT */
+.ajjaram-info-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* HEADING */
+.ajjaram-info-content h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #30251d;
+  margin: 0 0 22px;
+  text-align: left;
+}
+
+/* LINKS + IMAGES */
+.ajjaram-info-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 35px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* LEFT LINKS */
+.ajjaram-info-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.ajjaram-info-links a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #64574c;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ajjaram-info-links a:hover {
+  color: #b8860b;
+}
+
+/* RIGHT STORE IMAGES */
+.ajjaram-info-stores {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.ajjaram-info-stores a {
+  display: block;
+  max-width: 100%;
+  line-height: 0;
+}
+
+.ajjaram-info-stores img {
+  display: block;
+  width: 145px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+  .ajjaram-info-section {
+    padding: 30px 15px 25px;
+  }
+
+  .ajjaram-info-content h2 {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+
+  .ajjaram-info-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ajjaram-info-links {
+    gap: 12px;
+  }
+
+  .ajjaram-info-links a {
+    font-size: 11px;
+  }
+
+  .ajjaram-info-stores {
+    flex: 1;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .ajjaram-info-stores img {
+    width: 110px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 360px) {
+
+  .ajjaram-info-section {
+    padding: 25px 10px 20px;
+  }
+
+  .ajjaram-info-content h2 {
+    font-size: 17px;
+  }
+
+  .ajjaram-info-row {
+    gap: 8px;
+  }
+
+  .ajjaram-info-links a {
+    font-size: 10px;
+  }
+
+  .ajjaram-info-stores img {
+    width: 95px;
+    max-width: 100%;
+  }
+}
+
+/* EXPLORE BUTTON & NEXT SECTION GAP */
+
+.ajjaram-info-section {
+  margin-top: 55px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .ajjaram-info-section {
+    margin-top: 35px;
+  }
+}
+/* ===== PREMIUM 3D TEXT TRANSITION ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Serif+Telugu:wght@600;700&display=swap');
+
+.ajjaram-info-content .ajjaram-animated-title {
+  font-family: 'Cinzel', serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #30251d;
+  line-height: 1.5;
+  margin: 0 0 22px;
+  text-align: left;
+  min-height: 44px;
+  perspective: 700px;
+}
+
+#ajjaramTitleText {
+  display: inline-block;
+  transform-origin: center center;
+  backface-visibility: hidden;
+
+  opacity: 1;
+  transform: rotateX(0deg) translateY(0);
+
+  transition:
+    transform 0.55s cubic-bezier(.4, 0, .2, 1),
+    opacity 0.55s ease;
+}
+
+/* TEXT FLIP OUT */
+#ajjaramTitleText.flip-out {
+  opacity: 0;
+  transform: rotateX(85deg) translateY(-8px);
+}
+
+/* TEXT FLIP IN START */
+#ajjaramTitleText.flip-start {
+  opacity: 0;
+  transform: rotateX(-85deg) translateY(8px);
+}
+
+/* TELUGU FONT */
+#ajjaramTitleText.telugu-font {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 0.88em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .ajjaram-info-content .ajjaram-animated-title {
+    font-size: 19px;
+    min-height: 38px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ajjaram-info-content .ajjaram-animated-title {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ajjaramTitleText {
+    transition: none;
+  }
+}
+
